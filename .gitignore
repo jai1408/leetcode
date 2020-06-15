@@ -1,6 +1,6 @@
-### IntelliJ IDEA ###
+### IntelliJ IDEA ignore files::: ###
 .idea
 *.iws
 *.iml
 *.ipr
-/out/
+out/
