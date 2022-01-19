@@ -1,22 +1,17 @@
 package com.backtracking;
 
 public class NQueens {
-	final int N = 1;
+	final int N = 4;
 	int count=0;
 	private void nQueensSolution() {
-		// int chessBoard[][] = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
-		int chessBoard[][] = new int[N][N];
+		int[][] chessBoard = new int[N][N];
 		if (!nQueensSolutionUtil(chessBoard, 0))
 			System.out.println("The solution doesn't exists");
-		// printChessBoard(chessBoard);
 	}
 
 	private boolean nQueensSolutionUtil(int[][] chessBoard, int col) {
-		// if (col >= N)
-		// return true;
 		if (col == N) {
 			count++;
-			printChessBoard(chessBoard);
 			return true;
 		}
 
@@ -24,8 +19,6 @@ public class NQueens {
 		for (int i = 0; i < N; i++) {
 			if (isSafePosition(chessBoard, i, col)) {
 				chessBoard[i][col] = 1;
-				// if (nQueensSolutionUtil(chessBoard, col + 1))
-				// return true;
 				res = nQueensSolutionUtil(chessBoard, col + 1) || res;
 				chessBoard[i][col] = 0;
 			}

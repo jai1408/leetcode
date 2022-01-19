@@ -1,3 +1,6 @@
+/*
+package com.common_problems;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -5,7 +8,7 @@ import java.util.Queue;
 
 class TelephoneLetterCombinations {
 
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     String digits = "23";
     System.out.println(letterCombinations(digits));
   }
@@ -15,9 +18,10 @@ class TelephoneLetterCombinations {
     int n = digits.length();
     List<String> list = new ArrayList<>();
     Queue<String> q = new LinkedList<>();
-    //int[] digitss = Integer.valueOf(digits).
+    int[] digitss = Integer.valueOf(digits);
 
     q.add("");
+
     while (!q.isEmpty()) {
       String s = q.remove();
       if (s.length() == n) {
@@ -32,3 +36,4 @@ class TelephoneLetterCombinations {
     return list;
   }
 }
+*/

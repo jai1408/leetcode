@@ -8,12 +8,13 @@ public class MajorityElement {
     int size = nums.length;
     // int posMajElem =  possibleMajorityElement(nums, size);
     Map<Integer, Integer> map = new HashMap<>();
-    for (int i = 0; i < size; i++) {
-      if (map.containsKey(nums[i])) {
-        int count = map.get(nums[i]) + 1;
-        if (count > (size / 2)) return 0;
-        else map.put(nums[i], count);
-      } else map.put(nums[i], 1);
+    for (int num : nums) {
+      if (map.containsKey(num)) {
+        int count = map.get(num) + 1;
+        if (count > (size / 2)) return num;
+        else map.put(num, count);
+      }
+      else map.put(num, 1);
     }
     System.out.println(map);
     for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
@@ -23,7 +24,7 @@ public class MajorityElement {
   }
 
   public static void main(String[] args) {
-    int[] nums = {1, 2, 1, 3, 1};
+    int[] nums = {1, 2, 2, 3, 1};
     System.out.println(majorityElement(nums));
   }
 }

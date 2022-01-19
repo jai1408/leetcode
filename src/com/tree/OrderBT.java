@@ -6,30 +6,30 @@ public class OrderBT {
   public static void preOrder(Node node) {
     if (node == null) return;
     System.out.print(node.data + " ");
-    preOrder(node.left);
-    preOrder(node.right);
+    if(node.left!=null) preOrder(node.left);
+    if(node.right!=null) preOrder(node.right);
   }
 
   public static void postOrder(Node node) {
     if (node == null) return;
-    postOrder(node.left);
-    postOrder(node.right);
+    if(node.left!=null) postOrder(node.left);
+    if(node.right!=null) postOrder(node.right);
     System.out.print(node.data + " ");
   }
 
   public static void inOrder(Node node) {
     if (node == null) return;
-    inOrder(node.left);
+    if(node.left!=null) inOrder(node.left);
     System.out.print(node.data + " ");
-    inOrder(node.right);
+    if(node.right!=null) inOrder(node.right);
   }
 
   public static void printGivenLevel(Node root, int level) {
     if (root == null) return;
     if (level == 1) System.out.print(root.data + " ");
     else if (level > 1) {
-      printGivenLevel(root.left, level - 1);
-      printGivenLevel(root.right, level - 1);
+      if(root.left!=null) printGivenLevel(root.left, level - 1);
+      if(root.right!=null) printGivenLevel(root.right, level - 1);
     }
   }
 

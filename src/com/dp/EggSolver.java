@@ -8,7 +8,7 @@ public class EggSolver {
 	}
 
 	public int solveUsingDp(int n, int k) {
-		final int results[][] = new int[n + 1][k + 1];
+		final int[][] results = new int[n + 1][k + 1];
 		// base conditions
 		for (int i = 0; i < n + 1; i++) {
 			results[i][1] = i;
