@@ -9,7 +9,7 @@ public class TwoSumProblem {
 
 		Map<Integer, Integer> map = new HashMap<>();
 		int temp;
-		int indexes[] = new int[2];
+		int[] indexes = new int[2];
 
 		for (int i = 0; i < nums.length; i++) {
 			temp = target - nums[i];
@@ -30,11 +30,11 @@ public class TwoSumProblem {
 	}
 
 	public static void main(String[] args) {
-		int nums[] = { 2, 7, 11, 15 };
-		int indexes[] = TwoSumProblem.twoSum(nums, 4);
+		int[] nums = { 2, 7, 11, 15 };
+		int[] indexes = TwoSumProblem.twoSum(nums, 4);
 		if (indexes[0] != 0 && indexes[1] != 0) {
-			for (int i = 0; i < indexes.length; i++) {
-				System.out.println(indexes[i]);
+			for (int index : indexes) {
+				System.out.println(index);
 			}
 		} else {
 			System.out.println("pair not found");

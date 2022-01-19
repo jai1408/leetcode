@@ -2,7 +2,7 @@ package com.dp;
 import java.util.Arrays;
 
 class CoinChange {
-	static long countWays(int S[], int m, int n) {
+  static long countWays(int[] arr, int m, int n) {
 		// Time complexity of this function: O(mn)
 		// Space Complexity of this function: O(n)
 
@@ -14,28 +14,16 @@ class CoinChange {
 
 		// Initialize all table values as 0
 		Arrays.fill(table, 0); // O(n)
-		print(table);
 		// Base case (If given value is 0)
 		table[0] = 1;
-		print(table);
-		// Pick all coins one by one and update the table[]
-		// values after the index greater than or equal to
-		// the value of the picked coin
-		System.out.println("################################");
+    System.out.println(Arrays.toString(table));
+
 		for (int i = 0; i < m; i++) {
-			for (int j = S[i]; j <= n; j++) {
-				table[j] += table[j - S[i]];
+			for (int j = arr[i]; j <= n; j++) {
+				table[j] += table[j - arr[i]];
 			}
-			print(table);
 		}
 		return table[n];
-	}
-
-	static void print(long arr[]) {
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println(" ");
 	}
 
 	// Driver Function to test above function
